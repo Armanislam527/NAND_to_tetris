@@ -19,7 +19,7 @@ then
 elif [ $# -eq 0 ]
 then
 	# Run CPU emulator in interactive mode
-	java -classpath "${CLASSPATH}:bin/classes:bin/lib/Hack.jar:bin/lib/HackGUI.jar:bin/lib/Simulators.jar:bin/lib/SimulatorsGUI.jar:bin/lib/Compilers.jar" CPUEmulatorMain &
+	java -Dsun.java2d.uiScale=2.5 -classpath "${CLASSPATH}:bin/classes:bin/lib/Hack.jar:bin/lib/HackGUI.jar:bin/lib/Simulators.jar:bin/lib/SimulatorsGUI.jar:bin/lib/Compilers.jar" CPUEmulatorMain &
 else
 	# Convert arg1 to an absolute path and run CPU emulator with arg1
 	if [ `echo "$1" | sed -e "s/\(.\).*/\1/"` = / ]
